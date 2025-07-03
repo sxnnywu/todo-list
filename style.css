@@ -4,7 +4,7 @@
     --navy: #0A2463;
     --cream: #F0F4EF;
     --light-cream: #F8FAF9;
-    --light-blue: #c4e6f6;
+    --light-blue: #d4f0fd;
 }
 body{
     background-color: var(--cream);
@@ -256,7 +256,8 @@ main{
 .add-task{
     display: flex;
     flex-direction: row;
-    margin-top: 0;
+    margin-top: -25px;
+    padding: 10px 0;
     gap: 20px;
     width: 100%;
     height: 60px;
@@ -290,6 +291,48 @@ main{
 }
 .add-task button:hover{
     background-color: var(--navy);
+}
+
+/* Filters */
+.filters{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: -25px;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid var(--navy);
+}
+.filters .all-btn{
+    background-color: var(--coral);
+    width: 160px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 550;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.filters .all-btn:hover{
+    background-color: var(--coral);
+    color: var(--navy);
+}
+.filters .filter-btn{
+    background-color: var(--lightblue);
+    width: 160px;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 550;
+}
+.filters .filter-btn:hover{
+    background-color: white;
+    color: var(--navy);
 }
 
 /* Footer */
