@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- BODY -->
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>TO-DO LIST</h1>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- Focus -->
+         <div class="focus">
+            <div class="focus-text">
+                <h4>Focus</h4>
+                <p>Your productivity companion</p>
+            </div>
+            <div class="focus-input">
+                <input type="button" value="Quick Add" class="quick-add">
+            </div>
+         </div>
+
+         <!-- Stats -->
+         <div class="stats">
+            <div class="data">
+                <h4>X</h4>
+                <p>Today</p>
+            </div>
+            <div class="data">
+                <h4>X</h4>
+                <p>Done</p>
+            </div>
+            <div class="data">
+                <h4>X%</h4>
+                <p>Progress</p>
+            </div>
+            <div class="data">
+                <h4>X</h4>
+                <p>Goals</p>
+            </div>
+         </div>
+
+        <!-- Quick Actions -->
+         <div class="quick-actions">
+            <h5>Quick Actions</h5>
+            <div class="action">
+                <a href="#" class="view-calendar">View Calendar</a>
+            </div>
+            <div class="action">
+                <a href="#" class="set-goals">Set Goals</a>
+            </div>
+            <div class="action">
+                <a href="#" class="view-analytics">View Analytics</a>
+            </div>
+
+            <div class="today">
+                <h5>Today's Focus</h5>
+                <div class="focus-item">
+                    <p class="focus-description">Complete project proposal</p>
+                    <progress-bar>
+                        <div class="progress" style="width: 70%;"></div>
+                    </progress-bar>
+                    <p class="progress-label">X% complete</p>
+                </div>
+            </div>
+         </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Made with 💕 by Sunny Wu</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
