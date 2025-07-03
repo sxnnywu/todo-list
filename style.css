@@ -335,6 +335,28 @@ main{
     color: var(--navy);
 }
 
+/* Task List */
+.task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+    margin-top: -15px;
+}
+.task-list .task-item{
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--light-cream);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--navy);
+    font-size: 0.9em;
+    font-weight: 550;
+}
+
 /* Footer */
 footer{
     text-align: center;
