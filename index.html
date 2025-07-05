@@ -2,7 +2,6 @@
 <html lang="en">
 
 <!-- HEAD -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
 </head>
 
 <!-- BODY -->
-
 <body>
 
     <!-- HEADER -->
@@ -29,7 +27,7 @@
                 <p>Your productivity companion</p>
             </div>
             <div class="focus-input">
-                <input type="button" value="Quick Add" class="quick-add">
+                <input type="button" value="Quick Add" class="quick-add" onclick = "addFocus()">
             </div>
         </div>
 
@@ -89,7 +87,7 @@
                 <div class="task-header">
                     <div class="task-title">
                         <h4>My Tasks</h4>
-                        <p>date</p>
+                        <p class="date">date</p>
                     </div>
                     <button>Filter</button>
                     <button>Sort</button>
@@ -97,15 +95,15 @@
 
                 <!-- Add Task -->
                  <div class="add-task">
-                    <input type="text" placeholder="What would you like to accomplish today?">
-                    <button>Add Task</button>
+                    <input type="text" id="new-task" placeholder="What would you like to accomplish today?">
+                    <button id="add-task">Add Task</button>
                 </div>
 
                 <!-- Filters-->
                  <div class="filters">
-                    <button class="all-btn">All Tasks</button>
-                    <button class="filter-btn">Active</button>
-                    <button class="filter-btn">Completed</button>
+                    <button class="filter-btn" id="all-btn">All Tasks</button>
+                    <button class="filter-btn" id="active-btn">Active</button>
+                    <button class="filter-btn" id="active-btn">Completed</button>
                 </div>
 
                 <!-- Tasks -->

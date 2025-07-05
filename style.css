@@ -130,6 +130,7 @@ main{
     padding: 20px;
     border-radius: 20px;
     width: 20%;
+    height: 100%;
 }
 .quick-actions h5{
     color: var(--navy);
@@ -342,6 +343,8 @@ main{
     gap: 20px;
     padding: 10px 0;
     margin-top: -15px;
+    max-height: 250px;
+    overflow-y: auto;
 }
 .task-list .task-item{
     display: flex;
