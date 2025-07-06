@@ -84,6 +84,13 @@ main{
     transform: scale(1.05); 
     transition: transform 0.2s ease-in-out; 
 }
+.focus-input input:disabled {
+  background-color: lightgray;
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 
 /* Stats */
 .stats{

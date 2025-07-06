@@ -7,7 +7,7 @@ document.getElementById('add-task').addEventListener('click', addTask);
 document.getElementById('all-btn').addEventListener('click', displayAllTasks);
 document.getElementById('active-btn').addEventListener('click', displayActiveTasks);
 document.getElementById('completed-btn').addEventListener('click', displayCompletedTasks);
-document.getElementById('quick-add').addEventListener('click', addFocus);
+document.querySelector('.quick-add').addEventListener('click', addFocus);
 
 // DISPLAY DATE
 document.getElementsByClassName("date")[0].innerHTML = new Date().toLocaleDateString('en-US', {
@@ -48,7 +48,6 @@ function addFocus() {
             focus: true
         };
         tasks.push(task);
-        console.log(tasks);
         renderTasks(); // Render tasks
     }
 }
@@ -65,7 +64,7 @@ function renderFocus(focusText){
     focusLabel.innerText = focusText;
 
     // Disable button
-    document.querySelector('#quick-add').disabled = true;
+    document.querySelector('.quick-add').disabled = true;
 }
 
 // UPDATE PROGRESS
