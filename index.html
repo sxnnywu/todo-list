@@ -2,6 +2,7 @@
 <html lang="en">
 
 <!-- HEAD -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
 </head>
 
 <!-- BODY -->
+
 <body>
 
     <!-- HEADER -->
@@ -27,7 +29,7 @@
                 <p>Your productivity companion</p>
             </div>
             <div class="focus-input">
-                <input type="button" value="Quick Add" class="quick-add" onclick = "addFocus()">
+                <input type="button" value="Quick Add" id="quick-add">
             </div>
         </div>
 
@@ -68,14 +70,12 @@
                 </div>
 
                 <!-- Today -->
-                <div class="today">
+                <div class="today hidden">
                     <h5>Today's Focus</h5>
                     <div class="focus-item">
-                        <p class="focus-description">Complete project proposal</p>
-                        <progress-bar>
-                            <div class="progress" style="width: 70%;"></div>
-                        </progress-bar>
-                        <p class="progress-label">X% complete</p>
+                        <p id="focus-description">X</p>
+                        <input type="range" min="0" max="100" value="0" class="progress-bar" onchange="updateProgress(this.value)">
+                        <p class="progress-label">0% complete</p>
                     </div>
                 </div>
             </div>
@@ -94,37 +94,20 @@
                 </div>
 
                 <!-- Add Task -->
-                 <div class="add-task">
+                <div class="add-task">
                     <input type="text" id="new-task" placeholder="What would you like to accomplish today?">
                     <button id="add-task">Add Task</button>
                 </div>
 
                 <!-- Filters-->
-                 <div class="filters">
+                <div class="filters">
                     <button class="filter-btn" id="all-btn">All Tasks</button>
                     <button class="filter-btn" id="active-btn">Active</button>
-                    <button class="filter-btn" id="active-btn">Completed</button>
+                    <button class="filter-btn" id="completed-btn">Completed</button>
                 </div>
 
                 <!-- Tasks -->
-                 <div class="task-list">
-                    <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Complete the project report</label>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Review quarterly KPIs</label>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Plan weekend hiking trip</label>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Buy mom's birthday gift</label>
-                    </div>
-                 </div>
+                <div class="task-list"></div>
             </div>
         </div>
     </main>

@@ -51,24 +51,24 @@ main{
     color: var(--navy);
     font-size: 1.7em;
     margin-top: 4%;
-    margin-left: 10%;
+    margin-left: 8%;
     margin-bottom: 1%;
     font-weight: 800;
 }
 .focus-text p{
     color: var(--navy);
     font-size: 1em;
-    margin-left: 10%;
-    width: 100%;
+    margin-left: 8%;
+    width: 400px;
     margin-top: 1%;
     font-weight: 540;
 }
 .focus-input{
     display: flex;
     align-items: center;
-    margin-left: 70%;
+    margin-left: 47%;
 }
-.focus-input .quick-add{
+.focus-input input{
     background-color: var(--coral);
     color: white;
     border: none;
@@ -79,6 +79,10 @@ main{
     cursor: pointer;
     font-size: 1em;
     font-weight: 550;
+}
+.focus-input input:hover{
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out; 
 }
 
 /* Stats */
@@ -162,6 +166,9 @@ main{
     flex-direction: column;
     gap: 20px;
 }
+.today.hidden{
+    opacity: 0;
+}
 .today .focus-item{
     display: flex;
     flex-direction: column;
@@ -170,19 +177,36 @@ main{
     border-radius: 20px;
     border: 1px solid var(--navy);
 }
-.today .focus-item .focus-description{
+.today .focus-item p{
     color: var(--navy);
     font-size: 0.9em;
     margin-top: 10px;
     margin-bottom: 5px;
     font-weight: 530;
 }
-.today .focus-item progress-bar{
-    width: 100%;
-    height: 10px;
-    border-radius: 5px;
-    margin-top: 5%;
-    background-color: var(--coral);
+.today .focus-item .progress-bar {
+  width: 100%;
+  appearance: none;
+  height: 10px;
+  background: white;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.today .focus-item .progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--coralPink);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  margin-top: -5px;
+}
+.today .focus-item .progress-bar::-webkit-slider-runnable-track {
+  background: var(--coral);
+  height: 10px;
+  border-radius: 5px;
 }
 .today .focus-item .progress-label{
     color: var(--navy);
@@ -280,6 +304,7 @@ main{
 .add-task input:focus{
     outline: none;
     border-color: var(--coral);
+    color: var(--navy);
 }
 .add-task button{
     width: 20%;
@@ -358,6 +383,27 @@ main{
     color: var(--navy);
     font-size: 0.9em;
     font-weight: 550;
+}
+.task-item.completed {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.task-item.focus{
+    background-color: var(--light-cream);
+    color: var(--coral);
+}
+
+.task-item button{
+    background-color: var(--light-blue);
+    border: none;
+    color: var(--navy);
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: auto;
+}
+.task-item button:hover{
+    background-color: var(--navy);
+    color: white;
 }
 
 /* Footer */
