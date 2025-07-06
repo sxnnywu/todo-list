@@ -43,6 +43,15 @@ main{
     flex-direction: row;
     align-items: center;
 }
+.focus svg{
+    display: block;
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    stroke-width: 2px;
+    stroke: var(--coral);
+}
 .focus-text{
     display: flex;
     flex-direction: column;
@@ -66,7 +75,7 @@ main{
 .focus-input{
     display: flex;
     align-items: center;
-    margin-left: 47%;
+    margin-left: 470px;
 }
 .focus-input input{
     background-color: var(--coral);
@@ -153,14 +162,19 @@ main{
 }
 .quick-actions .action{
     display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
     cursor: pointer;
     color: var(--navy);
+}
+.quick-actions .action svg{
+    margin-left: 20px;
 }
 .quick-actions .action a{
     text-decoration: none;
     color: var(--navy);
     font-weight: 550;
-    margin-left: 50px;
     font-size: 0.9em;
 }
 

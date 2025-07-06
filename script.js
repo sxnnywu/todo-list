@@ -1,6 +1,7 @@
 // MODELS
 let tasks = [];
 let focus = null;
+let goals = [];
 
 // EVENT LISTENERS
 document.getElementById('add-task').addEventListener('click', addTask);
@@ -134,12 +135,12 @@ function renderTasks() {
     });
 
     // Stats
-    const total = document.querySelector('#total h4');
+    const goals = document.querySelector('#goals h4');
     const done = document.querySelector('#done h4');
     const progress = document.querySelector('#progress h4');
     const today = document.querySelector('#today h4');
 
-    total.innerText = tasks.length;
+    total.innerText = goals.length;
 
     const completedCount = 100 * (tasks.filter(task => task.completed).length);
     done.innerText = `${completedCount}%`
