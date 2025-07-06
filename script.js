@@ -140,7 +140,7 @@ function renderTasks() {
     const progress = document.querySelector('#progress h4');
     const today = document.querySelector('#today h4');
 
-    total.innerText = goals.length;
+    goals.innerText = goals.length;
 
     const completedCount = 100 * (tasks.filter(task => task.completed).length);
     done.innerText = `${completedCount}%`
@@ -171,6 +171,9 @@ function deleteTask(index) {
 // DISPLAY ALL TASKS
 function displayAllTasks() {
     const tasks = document.querySelectorAll('.task-item');
+    document.querySelector('#active-btn').classList.remove('selected');
+    document.querySelector('#completed-btn').classList.remove('selected');
+    document.querySelector('#all-btn').classList.add('selected');
     tasks.forEach(task => {
         task.style.display = 'flex';
     });
@@ -179,6 +182,9 @@ function displayAllTasks() {
 // DISPLAY ACTIVE TASKS
 function displayActiveTasks() {
     const tasks = document.querySelectorAll('.task-item');
+    document.querySelector('#all-btn').classList.toggle('selected');
+    document.querySelector('#completed-btn').classList.remove('selected');
+    document.querySelector('#active-btn').classList.add('selected');
     tasks.forEach(task => {
         if (task.classList.contains('completed')) {
             task.style.display = 'none';
@@ -192,6 +198,9 @@ function displayActiveTasks() {
 // DISPLAY COMPLETED TASKS
 function displayCompletedTasks() {
     const tasks = document.querySelectorAll('.task-item');
+    document.querySelector('#active-btn').classList.remove('selected');
+    document.querySelector('#all-btn').classList.remove('selected');
+    document.querySelector('#completed-btn').classList.add('selected');
     tasks.forEach(task => {
         if (task.classList.contains('completed')) {
             task.style.display = 'flex';

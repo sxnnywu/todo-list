@@ -350,7 +350,7 @@ main{
     width: 100%;
     border-bottom: 1px solid var(--navy);
 }
-.filters .all-btn{
+.filters .filter-btn.selected{
     background-color: var(--coral);
     width: 160px;
     color: white;
@@ -362,7 +362,7 @@ main{
     font-weight: 550;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.filters .all-btn:hover{
+.filters .filter-btn.selected:hover{
     background-color: var(--coral);
     color: var(--navy);
 }
