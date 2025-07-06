@@ -21,12 +21,12 @@ document.getElementsByClassName("date")[0].innerHTML = new Date().toLocaleDateSt
 function addFocus() {
 
     // Check if there is already a focus
-    if (focus != null){
+    if (focus != null) {
 
         // Replace old focus with new one -- set the old task as false
-        if(!confirm("You've already set a focus for today! Replace it with a new one?")) return;
+        if (!confirm("You've already set a focus for today! Replace it with a new one?")) return;
         tasks.forEach(task => {
-            if(task.focus) task.focus = false;
+            if (task.focus) task.focus = false;
         })
     }
 
@@ -34,13 +34,13 @@ function addFocus() {
     const userInput = prompt("What is your focus today?");
 
     // No input
-    if(!userInput) alert("No focus entered!");
+    if (!userInput) alert("No focus entered!");
 
-    else{
+    else {
         // Focus
         focus = userInput;
         renderFocus(userInput);
-        
+
         // New task
         const task = {
             text: userInput,
@@ -53,8 +53,8 @@ function addFocus() {
 }
 
 // RENDER FOCUS
-function renderFocus(focusText){
-    
+function renderFocus(focusText) {
+
     // Show today div
     const today = document.querySelector('.today');
     today.classList.remove('hidden');
@@ -68,12 +68,12 @@ function renderFocus(focusText){
 }
 
 // UPDATE PROGRESS
-function updateProgress(value){
+function updateProgress(value) {
 
     const progressLabel = document.querySelector('.progress-label');
 
     // If task complete
-    if(value == 100){
+    if (value == 100) {
         const focusTask = tasks.find(task => task.focus);
         focusTask.completed = true;
         const focusTaskItem = document.querySelector('.task-item.focus');
@@ -101,7 +101,8 @@ function addTask() {
     const task = {
         text: taskText,
         completed: false,
-        focus: false
+        focus: false,
+        createdAt: new Date()
     };
     tasks.push(task);
 
@@ -112,7 +113,8 @@ function addTask() {
 
 // RENDER TASKS
 function renderTasks() {
-    
+
+    // Task list
     const taskList = document.querySelector('.task-list');
     taskList.innerHTML = ''; // Clear existing tasks
 
@@ -126,10 +128,28 @@ function renderTasks() {
         `;
         if (task.completed)
             taskItem.classList.add('completed');
-        if (task.focus) 
+        if (task.focus)
             taskItem.classList.add('focus');
         taskList.appendChild(taskItem);
     });
+
+    // Stats
+    const total = document.querySelector('#total h4');
+    const done = document.querySelector('#done h4');
+    const progress = document.querySelector('#progress h4');
+    const today = document.querySelector('#today h4');
+
+    total.innerText = tasks.length;
+
+    const completedCount = 100 * (tasks.filter(task => task.completed).length);
+    done.innerText = `${completedCount}%`
+
+    const completedPercent = (completedCount / tasks.length) * 100;
+    progress.innerText = `${completedPercent}%`;
+
+    const todayString = new Date().toDateString();
+    const tasksAddedToday = tasks.filter(task => new Date(task.createdAt).toDateString() == todayString).length;
+    today.innerText = `${tasksAddedToday}`;
 }
 
 // TOGGLE TASK COMPLETION
@@ -141,10 +161,10 @@ function toggleTask(index) {
 // DELETE TASK
 function deleteTask(index) {
 
-    if(confirm("Delete this task?")){
+    if (confirm("Delete this task?")) {
         tasks.splice(index, 1); // Remove task from array
         renderTasks(); // Re-render tasks
-    }   
+    }
 }
 
 // DISPLAY ALL TASKS
@@ -161,7 +181,7 @@ function displayActiveTasks() {
     tasks.forEach(task => {
         if (task.classList.contains('completed')) {
             task.style.display = 'none';
-        } 
+        }
         else {
             task.style.display = 'flex';
         }
@@ -174,7 +194,7 @@ function displayCompletedTasks() {
     tasks.forEach(task => {
         if (task.classList.contains('completed')) {
             task.style.display = 'flex';
-        } 
+        }
         else {
             task.style.display = 'none';
         }
