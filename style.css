@@ -25,6 +25,20 @@ h1{
     font-weight: 800;
     margin-top: 90px;
     margin-bottom: 20px;
+    position: relative;
+}
+#blinker{
+    opacity: 0;
+    animation: blink 1s infinite;
+    position: absolute;
+}
+#blinker.hide{
+    opacity: 0;
+    animation: none;
+}
+@keyframes blink {
+    0%, 100% {opacity: 1}
+    50% {opacity: 0}
 }
 
 /* Main */

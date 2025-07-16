@@ -3,6 +3,24 @@ let tasks = [];
 let focus = null;
 let goals = [];
 
+// TYPING ANIMATION
+const title = document.querySelector('#typed');
+const fullTitle = "TO-DO LIST";
+let typed = 0;
+const id = setInterval(newLetter, 120);
+
+// NEW LETTER
+function newLetter(){
+    if(typed < fullTitle.length){
+        title.innerHTML += fullTitle[typed];
+        typed++;
+    }
+    else {
+        clearInterval(id); 
+        document.querySelector('#blinker').classList.add('hide');
+    }
+}
+
 // EVENT LISTENERS
 document.getElementById('add-task').addEventListener('click', addTask);
 document.getElementById('all-btn').addEventListener('click', displayAllTasks);
