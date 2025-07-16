@@ -18,6 +18,12 @@ function newLetter(){
     else {
         clearInterval(id); 
         document.querySelector('#blinker').classList.add('hide');
+        setTimeout(() => {
+            document.querySelector('.focus').classList.remove('hidden-content');
+            document.querySelector('.stats').classList.remove('hidden-content');
+            document.querySelector('.side-bar').classList.remove('hidden-content');
+            document.querySelector('.task-section').classList.remove('hidden-content');
+        }, 50);
     }
 }
 

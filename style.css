@@ -14,6 +14,14 @@ main{
     max-width: 1200px;
     margin: 0 auto;
 }
+.focus, .stats, .side-bar, .task-section{
+    transition: opacity 1s ease, transform 1s ease;
+}
+.hidden-content{
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
 /* Header */
 header{
     padding: 20px;
