@@ -65,7 +65,12 @@ function renderFocus(focusText) {
     focusLabel.innerText = focusText;
 
     // Disable button
-    document.querySelector('.quick-add').disabled = true;
+    document.querySelector('.quick-add').classList.add('disabled');
+}
+
+// COMPLETE FOCUS
+function completeFocus(){
+    updateProgress(100);
 }
 
 // UPDATE PROGRESS
@@ -75,10 +80,16 @@ function updateProgress(value) {
 
     // If task complete
     if (value == 100) {
+
+        // Update model
         const focusTask = tasks.find(task => task.focus);
         focusTask.completed = true;
+
+        // Update side bar
         const focusTaskItem = document.querySelector('.task-item.focus');
         focusTaskItem.classList.add('completed');
+
+        // Update task list
         focusTaskItem.checked = true;
         renderTasks();
     }
@@ -135,18 +146,19 @@ function renderTasks() {
     });
 
     // Stats
-    const goals = document.querySelector('#goals h4');
+    const remaining = document.querySelector('#remaining h4');
     const done = document.querySelector('#done h4');
     const progress = document.querySelector('#progress h4');
     const today = document.querySelector('#today h4');
 
-    goals.innerText = goals.length;
+    const remainingCount = tasks.filter(task => !task.completed).length;
+    remaining.innerText = `${remainingCount}`;
 
-    const completedCount = 100 * (tasks.filter(task => task.completed).length);
-    done.innerText = `${completedCount}%`
+    const completedCount = tasks.filter(task => task.completed).length;
+    done.innerText = `${completedCount}`;
 
-    const completedPercent = (completedCount / tasks.length) * 100;
-    progress.innerText = `${completedPercent}%`;
+    const completedPercent = 100 * (completedCount / tasks.length);
+    progress.innerText = `${Math.round(completedPercent)}%`;
 
     const todayString = new Date().toDateString();
     const tasksAddedToday = tasks.filter(task => new Date(task.createdAt).toDateString() == todayString).length;
@@ -156,6 +168,7 @@ function renderTasks() {
 // TOGGLE TASK COMPLETION
 function toggleTask(index) {
     tasks[index].completed = !tasks[index].completed; // Toggle completion status
+    if(tasks[index].focus) completeFocus();
     renderTasks(); // Re-render tasks
 }
 
