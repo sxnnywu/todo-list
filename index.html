@@ -22,91 +22,92 @@
         </h1>
     </header>
 
-    <!-- MAIN -->
-    <main>
+    <div class="parallax-section">
+        <!-- MAIN -->
+        <main>
+            <!-- Focus -->
+            <div class="focus hidden-content">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-target-icon lucide-target">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                </svg>
+                <div class="focus-text">
+                    <h4>Focus</h4>
+                    <p>Your productivity companion</p>
+                </div>
+                <div class="focus-input">
+                    <input type="button" value="+      Quick Add" class="quick-add">
+                </div>
+            </div>
 
-        <!-- Focus -->
-        <div class="focus hidden-content">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-target-icon lucide-target">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-            </svg>
-            <div class="focus-text">
-                <h4>Focus</h4>
-                <p>Your productivity companion</p>
+            <!-- Stats -->
+            <div class="stats hidden-content">
+                <div class="data" id="remaining">
+                    <h4>0</h4>
+                    <p>Remaining</p>
+                </div>
+                <div class="data" id="done">
+                    <h4>0</h4>
+                    <p>Done</p>
+                </div>
+                <div class="data" id="progress">
+                    <h4>0%</h4>
+                    <p>Progress</p>
+                </div>
+                <div class="data" id="today">
+                    <h4>0</h4>
+                    <p>Tasks added today</p>
+                </div>
             </div>
-            <div class="focus-input">
-                <input type="button" value="+      Quick Add" class="quick-add">
-            </div>
-        </div>
 
-        <!-- Stats -->
-        <div class="stats hidden-content">
-            <div class="data" id="remaining">
-                <h4>0</h4>
-                <p>Remaining</p>
-            </div>
-            <div class="data" id="done">
-                <h4>0</h4>
-                <p>Done</p>
-            </div>
-            <div class="data" id="progress">
-                <h4>0%</h4>
-                <p>Progress</p>
-            </div>
-            <div class="data" id="today">
-                <h4>0</h4>
-                <p>Tasks added today</p>
-            </div>
-        </div>
+            <!-- Content -->
+            <div class="content">
 
-        <!-- Content -->
-        <div class="content">
-
-            <!-- Side bar -->
-            <div class="side-bar hidden-content">
-                <!-- Today -->
-                <div class="today hidden">
-                    <h5>Today's Focus</h5>
-                    <div class="focus-item">
-                        <p id="focus-description">X</p>
-                        <input type="range" min="0" max="100" value="0" class="progress-bar"
-                            onchange="updateProgress(this.value)">
-                        <p class="progress-label">0% complete</p>
+                <!-- Side bar -->
+                <div class="side-bar hidden-content">
+                    <!-- Today -->
+                    <div class="today hidden">
+                        <h5>Today's Focus</h5>
+                        <div class="focus-item">
+                            <p id="focus-description">X</p>
+                            <input type="range" min="0" max="100" value="0" class="progress-bar"
+                                onchange="updateProgress(this.value)">
+                            <p class="progress-label">0% complete</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Task Section -->
+                <div class="task-section hidden-content">
+
+                    <!-- Task Header -->
+                    <div class="task-header">
+                        <h4>My Tasks</h4>
+                        <p class="date">date</p>
+                    </div>
+
+                    <!-- Add Task -->
+                    <div class="add-task">
+                        <input type="text" id="new-task" placeholder="What would you like to accomplish today?">
+                        <button id="add-task">Add Task</button>
+                    </div>
+
+                    <!-- Filters-->
+                    <div class="filters">
+                        <button class="filter-btn" id="all-btn">All Tasks</button>
+                        <button class="filter-btn" id="active-btn">Active</button>
+                        <button class="filter-btn" id="completed-btn">Completed</button>
+                    </div>
+
+                    <!-- Tasks -->
+                    <div class="task-list"></div>
+                </div>
             </div>
-
-            <!-- Task Section -->
-            <div class="task-section hidden-content">
-
-                <!-- Task Header -->
-                <div class="task-header">
-                    <h4>My Tasks</h4>
-                    <p class="date">date</p>
-                </div>
-
-                <!-- Add Task -->
-                <div class="add-task">
-                    <input type="text" id="new-task" placeholder="What would you like to accomplish today?">
-                    <button id="add-task">Add Task</button>
-                </div>
-
-                <!-- Filters-->
-                <div class="filters">
-                    <button class="filter-btn" id="all-btn">All Tasks</button>
-                    <button class="filter-btn" id="active-btn">Active</button>
-                    <button class="filter-btn" id="completed-btn">Completed</button>
-                </div>
-
-                <!-- Tasks -->
-                <div class="task-list"></div>
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <!-- FOOTER -->
     <footer>

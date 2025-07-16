@@ -1,4 +1,4 @@
-:root{
+:root {
     --coral: #F08080;
     --coralPink: #F4978E;
     --navy: #0A2463;
@@ -6,56 +6,85 @@
     --light-cream: #F8FAF9;
     --light-blue: #d4f0fd;
 }
-body{
-    background-color: var(--cream);
+
+body {
     font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, var(--light-blue), var(--cream));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-main{
+
+main {
     max-width: 1200px;
     margin: 0 auto;
 }
-.focus, .stats, .side-bar, .task-section{
+
+/* Transition */
+.focus,
+.stats,
+.side-bar,
+.task-section {
     transition: opacity 1s ease, transform 1s ease;
+    z-index: 1;
 }
-.hidden-content{
+
+.hidden-content {
     opacity: 0;
     transform: translateY(20px);
     pointer-events: none;
 }
+
 /* Header */
-header{
+header {
     padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 0; 
 }
-h1{
+
+h1 {
     color: var(--navy);
     text-align: center;
-    font-size: 4em;
+    font-size: 6em;
     font-weight: 800;
-    margin-top: 90px;
+    margin-top: 110px;
     margin-bottom: 20px;
     position: relative;
+    z-index: -1;
 }
-#blinker{
+
+#blinker {
     opacity: 0;
     animation: blink 1s infinite;
     position: absolute;
 }
-#blinker.hide{
+
+#blinker.hide {
     opacity: 0;
     animation: none;
 }
+
 @keyframes blink {
-    0%, 100% {opacity: 1}
-    50% {opacity: 0}
+
+    0%,
+    100% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0
+    }
 }
 
 /* Main */
-main{
+main {
     padding: 20px;
 }
 
 /* Focus */
-.focus{
+.focus {
     background-color: white;
     border-radius: 20px;
     margin-top: 1px;
@@ -65,7 +94,8 @@ main{
     flex-direction: row;
     align-items: center;
 }
-.focus svg{
+
+.focus svg {
     display: block;
     margin-left: 10px;
     width: 60px;
@@ -74,11 +104,13 @@ main{
     stroke-width: 2px;
     stroke: var(--coral);
 }
-.focus-text{
+
+.focus-text {
     display: flex;
     flex-direction: column;
 }
-.focus-text h4{
+
+.focus-text h4 {
     color: var(--navy);
     font-size: 1.7em;
     margin-top: 4%;
@@ -86,7 +118,8 @@ main{
     margin-bottom: 1%;
     font-weight: 800;
 }
-.focus-text p{
+
+.focus-text p {
     color: var(--navy);
     font-size: 1em;
     margin-left: 8%;
@@ -94,12 +127,14 @@ main{
     margin-top: 1%;
     font-weight: 540;
 }
-.focus-input{
+
+.focus-input {
     display: flex;
     align-items: center;
     margin-left: 40%;
 }
-.focus-input input{
+
+.focus-input input {
     background-color: var(--coral);
     color: white;
     border: none;
@@ -111,27 +146,31 @@ main{
     font-size: 1em;
     font-weight: 550;
 }
-.focus-input input:hover{
-    transform: scale(1.05); 
-    transition: transform 0.2s ease-in-out; 
+
+.focus-input input:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
+
 .focus-input input.disabled {
-  background-color: lightgray;
-  color: white;
-  cursor: not-allowed;
-  opacity: 0.6;
+    background-color: lightgray;
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 
 /* Stats */
-.stats{
+.stats {
     margin-top: 30px;
     display: flex;
     flex-direction: row;
     gap: 13px;
 }
-.stats .data{
+
+.stats .data {
     background-color: var(--light-cream);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     padding: 20px;
     flex: 1;
@@ -139,14 +178,16 @@ main{
     display: flex;
     flex-direction: column;
 }
-.stats .data h4{
+
+.stats .data h4 {
     color: var(--navy);
     font-size: 1.4em;
     margin-top: 1%;
     margin-bottom: 2%;
     font-weight: 750;
 }
-.stats .data p{
+
+.stats .data p {
     color: var(--navy);
     font-size: 0.8em;
     margin-top: 1%;
@@ -155,7 +196,7 @@ main{
 }
 
 /* Content */
-.content{
+.content {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -163,7 +204,7 @@ main{
 }
 
 /* Side bar */
-.side-bar{
+.side-bar {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -176,7 +217,7 @@ main{
 }
 
 /* Today */
-.today{
+.today {
     margin-top: 10px;
     border-top: 1px solid var(--navy);
     padding-top: 10px;
@@ -185,14 +226,17 @@ main{
     flex-direction: column;
     gap: 1px;
 }
-.today h5{
+
+.today h5 {
     color: var(--navy);
     font-size: 20px;
-} 
-.today.hidden{
+}
+
+.today.hidden {
     opacity: 0;
 }
-.today .focus-item{
+
+.today .focus-item {
     display: flex;
     flex-direction: column;
     background-color: var(--cream);
@@ -200,38 +244,43 @@ main{
     border-radius: 20px;
     border: 1px solid var(--navy);
 }
-.today .focus-item p{
+
+.today .focus-item p {
     color: var(--navy);
     font-size: 0.9em;
     margin-top: 10px;
     margin-bottom: 5px;
     font-weight: 530;
 }
+
 .today .focus-item .progress-bar {
-  width: 100%;
-  appearance: none;
-  height: 10px;
-  background: white;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
+    width: 100%;
+    appearance: none;
+    height: 10px;
+    background: white;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
 }
+
 .today .focus-item .progress-bar::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: var(--coralPink);
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-  margin-top: -5px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--coralPink);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    margin-top: -5px;
 }
+
 .today .focus-item .progress-bar::-webkit-slider-runnable-track {
-  background: var(--coral);
-  height: 10px;
-  border-radius: 5px;
+    background: var(--coral);
+    height: 10px;
+    border-radius: 5px;
 }
-.today .focus-item .progress-label{
+
+.today .focus-item .progress-label {
     color: var(--navy);
     font-size: 0.8em;
     margin-top: 7%;
@@ -240,7 +289,7 @@ main{
 }
 
 /* Task Section */
-.task-section{
+.task-section {
     margin-top: 30px;
     margin-bottom: 60px;
     display: flex;
@@ -254,7 +303,7 @@ main{
 }
 
 /* Task Header */
-.task-section .task-header{
+.task-section .task-header {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -262,14 +311,16 @@ main{
     height: 80px;
     border-bottom: 1px solid var(--navy);
 }
-.task-section h4{
+
+.task-section h4 {
     color: var(--navy);
     font-size: 1.4em;
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 800;
 }
-.task-section p{
+
+.task-section p {
     color: var(--navy);
     font-size: 0.9em;
     margin-top: 0;
@@ -278,7 +329,7 @@ main{
 }
 
 /* Add Task */
-.add-task{
+.add-task {
     display: flex;
     flex-direction: row;
     margin-top: -25px;
@@ -290,7 +341,8 @@ main{
     align-items: center;
     justify-content: space-between;
 }
-.add-task input{
+
+.add-task input {
     width: 75%;
     height: 20px;
     margin-top: 1%;
@@ -301,12 +353,14 @@ main{
     color: lightgray;
     background-color: var(--light-cream);
 }
-.add-task input:focus{
+
+.add-task input:focus {
     outline: none;
     border-color: var(--coral);
     color: var(--navy);
 }
-.add-task button{
+
+.add-task button {
     width: 20%;
     border-radius: 10px;
     background-color: var(--coral);
@@ -315,12 +369,13 @@ main{
     cursor: pointer;
     padding: 10px;
 }
-.add-task button:hover{
+
+.add-task button:hover {
     background-color: var(--navy);
 }
 
 /* Filters */
-.filters{
+.filters {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -329,7 +384,8 @@ main{
     width: 100%;
     border-bottom: 1px solid var(--navy);
 }
-.filters .filter-btn.selected{
+
+.filters .filter-btn.selected {
     background-color: var(--coral);
     width: 160px;
     color: white;
@@ -341,11 +397,13 @@ main{
     font-weight: 550;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.filters .filter-btn.selected:hover{
+
+.filters .filter-btn.selected:hover {
     background-color: var(--coral);
     color: var(--navy);
 }
-.filters .filter-btn{
+
+.filters .filter-btn {
     background-color: var(--lightblue);
     width: 160px;
     color: var(--navy);
@@ -356,13 +414,14 @@ main{
     font-size: 0.9em;
     font-weight: 550;
 }
-.filters .filter-btn:hover{
+
+.filters .filter-btn:hover {
     background-color: white;
     color: var(--navy);
 }
 
 /* Task List */
-.task-list{
+.task-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -371,7 +430,8 @@ main{
     max-height: 250px;
     overflow-y: auto;
 }
-.task-list .task-item{
+
+.task-list .task-item {
     display: flex;
     height: 30px;
     flex-direction: row;
@@ -384,16 +444,18 @@ main{
     font-size: 0.9em;
     font-weight: 550;
 }
+
 .task-item.completed {
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
 }
-.task-item.focus{
+
+.task-item.focus {
     background-color: var(--light-cream);
     color: var(--coral);
 }
 
-.task-item button{
+.task-item button {
     background-color: var(--light-blue);
     border: none;
     color: var(--navy);
@@ -401,13 +463,14 @@ main{
     font-size: 0.9em;
     margin-left: auto;
 }
-.task-item button:hover{
+
+.task-item button:hover {
     background-color: var(--navy);
     color: white;
 }
 
 /* Footer */
-footer{
+footer {
     text-align: center;
     font-size: 1em;
     background-color: var(--navy);
