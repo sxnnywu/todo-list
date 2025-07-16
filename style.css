@@ -75,7 +75,7 @@ main{
 .focus-input{
     display: flex;
     align-items: center;
-    margin-left: 470px;
+    margin-left: 40%;
 }
 .focus-input input{
     background-color: var(--coral);

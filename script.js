@@ -46,7 +46,8 @@ function addFocus() {
         const task = {
             text: userInput,
             completed: false,
-            focus: true
+            focus: true,
+            createdAt: new Date()
         };
         tasks.push(task);
         renderTasks(); // Render tasks
