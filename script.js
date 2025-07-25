@@ -27,6 +27,27 @@ function newLetter(){
     }
 }
 
+// SCROLL EFFECT ON H1
+const scrollTitle = document.querySelector(`#title`);
+
+function updateTitleOnScroll(){
+    const scrollY = window.scrollY;
+    const maxScroll = 230;
+    const progress = Math.min(scrollY / maxScroll, 1);
+    const fontSize = 4 + progress * 2.5; // Scale from 3em to 5em
+    const rotateX = progress * 20; // Rotate from 0 to 20 degrees
+    const translateZ = progress * 100; // Translate from 0 to 100px
+
+    scrollTitle.style.fontSize = `${fontSize}em`;
+    scrollTitle.style.transform =  `perspective(800ox) translateZ(${translateZ}px) rotateX(${rotateX}deg)`;
+}
+
+// Attach scroll listener
+window.addEventListener('scroll', updateTitleOnScroll);
+
+// Initial call in case user is already scrolled
+updateTitleOnScroll();
+
 // EVENT LISTENERS
 document.getElementById('add-task').addEventListener('click', addTask);
 document.getElementById('all-btn').addEventListener('click', displayAllTasks);

@@ -28,6 +28,7 @@ main {
 .task-section {
     transition: opacity 1s ease, transform 1s ease;
     z-index: 1;
+    position: relative;
 }
 
 .hidden-content {
@@ -44,11 +45,17 @@ header {
     z-index: 0; 
 }
 
+@scroll-timeline h1Grow{
+    source: auto;
+    scroll-offsets: start 0, end 100vh;
+    orientation: block;
+}
+
 h1 {
     color: var(--navy);
     text-align: center;
     font-size: 6em;
-    font-weight: 800;
+    font-weight: 900;
     margin-top: 110px;
     margin-bottom: 20px;
     position: relative;
